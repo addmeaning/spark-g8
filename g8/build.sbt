@@ -1,4 +1,4 @@
-import Dependencies._
+lazy val sparkVersion = "2.2.0"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -8,6 +8,10 @@ lazy val root = (project in file(".")).
     )),
     name := "Spark template",
     libraryDependencies ++= Seq(
-      core, mllib, jblas, scalaTest in Test
+      "org.apache.spark" %% "spark-core" % sparkVersion,
+      "org.apache.spark" %% "spark-sql" % sparkVersion,
+      "org.apache.spark" %% "spark-mllib" % sparkVersion,
+      "com.github.fommil.netlib" % "all" % "1.1.2" pomOnly(),
+      "org.scalatest" %% "scalatest" % "3.0.4"
     )
   )
