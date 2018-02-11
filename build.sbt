@@ -1,13 +1,12 @@
-name := "g8-template"
-
-version := "0.1"
-
-scalaVersion := "2.11.12"
-
-val sparkVersion = "2.2.0"
-
-libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion,
-  "org.apache.spark" %% "spark-mllib" % sparkVersion,
-  "com.github.fommil.netlib" % "all" % "1.1.2" pomOnly()
-)
+lazy val root = (project in file(".")).
+  settings(
+    inThisBuild(List(
+      organization := "com.addmeaning",
+      scalaVersion := "2.11.12",
+      version      := "1.0"
+    )),
+    name := "Spark template",
+    libraryDependencies ++= Seq(
+      core,
+    )
+  )
