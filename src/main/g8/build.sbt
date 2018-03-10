@@ -1,4 +1,4 @@
-lazy val sparkVersion = "2.2.0"
+lazy val sparkVersion = "$spark_version$"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
