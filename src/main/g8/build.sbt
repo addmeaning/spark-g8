@@ -2,7 +2,7 @@ lazy val sparkVersion = "$spark_version$"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
-      organization := "com.addmeaning",
+      organization := "$package$",
       scalaVersion := "2.11.12",
       version := "1.0"
     )),
