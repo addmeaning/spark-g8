@@ -1,14 +1,13 @@
-
-lazy val sparkVersion = "$spark_version$"
+lazy val sparkVersion = "2.4.0"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
-      organization := "$project_description$",
+      organization := "Basic template for Apache Spark projects",
       scalaVersion := "2.11.12",
       version := "1.0"
     )),
-    name := "$name$",
-    description := "$name$",
+    name := "Apache Spark Seed",
+    description := "Apache Spark Seed",
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
       "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
@@ -18,8 +17,8 @@ lazy val root = (project in file(".")).
     )
   )
 assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-  case x => MergeStrategy.first
+  case PathList("META-INF", _*) => MergeStrategy.discard
+  case _ => MergeStrategy.first
 }
 
-run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
+run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run)).evaluated
