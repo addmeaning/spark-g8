@@ -1,9 +1,9 @@
-lazy val sparkVersion = "2.4.0"
+lazy val sparkVersion = "3.0.1"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
       organization := "Basic template for Apache Spark projects",
-      scalaVersion := "2.11.12",
+      scalaVersion := "2.12.13",
       version := "1.0"
     )),
     name := "Apache Spark Seed",
