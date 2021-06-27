@@ -1,0 +1,6 @@
+# Spark project template
+
+usage
+```
+sbt new addmeaning/spark.g8
+```
