@@ -1,13 +1,13 @@
-lazy val sparkVersion = $spark_version$
+lazy val sparkVersion = "$spark_version$"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
-      organization := $package$,
+      organization := "$package$",
       scalaVersion := "2.12.13",
       version := "1.0"
     )),
-    name := $name$
-    description := $project_description$,
+    name := "$name$",
+    description := "$project_description$",
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
       "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
